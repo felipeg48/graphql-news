@@ -8,9 +8,9 @@
     "prettier/prettier": ["error", {
       "printWidth": 100,
       "singleQuote": true,
-      "trailingComma": "es5",
+      "trailingComma": "es5"
     }],
-    "import/prefer-default-export": 0,
+    "import/prefer-default-export": 0
   },
   "env": {
     "node": true,
