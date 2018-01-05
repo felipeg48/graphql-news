@@ -52,7 +52,6 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-      console.log(this.props);
       return _react2.default.createElement('h1', null, 'Hello, World');
     }
   }]);
@@ -61,4 +60,4 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIkFwcCIsImNvbnNvbGUiLCJsb2ciLCJwcm9wcyIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQUVxQixBOzs7Ozs7Ozs7Ozs2QkFDVixBQUNQO2NBQVEsQUFBUixJQUFZLEtBQUssQUFBakIsQUFDQTthQUNFLGdCQUFBLGNBQUEsTUFBQSxNQUFBLEFBREYsQUFHRDs7Ozs7RUFOOEIsZ0JBQU0sQTs7a0JBQWxCLEEiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL3RyZWNrYXJ0L0NvZGUvZ3JhcGhxbC1uZXdzIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIkFwcCIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQUVxQixBOzs7Ozs7Ozs7Ozs2QkFDVixBQUNQO2FBQ0UsZ0JBQUEsY0FBQSxNQUFBLE1BQUEsQUFERixBQUdEOzs7OztFQUw4QixnQkFBTSxBOztrQkFBbEIsQSIsImZpbGUiOiJpbmRleC5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvVXNlcnMvdHJlY2thcnQvQ29kZS9ncmFwaHFsLW5ld3MifQ==
