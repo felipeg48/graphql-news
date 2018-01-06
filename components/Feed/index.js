@@ -15,7 +15,7 @@ const Feed = props => (
         <style jsx>{`
           h2 {
             display: inline-block;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
           }
         `}</style>{' '}

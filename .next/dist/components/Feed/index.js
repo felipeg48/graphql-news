@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) {
 
 var Feed = function Feed(props) {
   return _react2.default.createElement('div', null, props.links.map(function (link, i) {
-    return _react2.default.createElement('div', { key: 'item-' + i }, _react2.default.createElement('span', null, i + 1, '. '), _react2.default.createElement('h2', null, _react2.default.createElement('a', { href: link.url }, link.description)), _react2.default.createElement('style', { jsx: true }, '\n          h2 {\n            display: inline-block;\n            font-size: 18px;\n            font-weight: 300;\n          }\n        '), ' ', _react2.default.createElement('a', { href: link.url }, '(', link.url.replace(/(^\w+:|^)\/\//, ''), ')'));
+    return _react2.default.createElement('div', { key: 'item-' + i }, _react2.default.createElement('span', null, i + 1, '. '), _react2.default.createElement('h2', null, _react2.default.createElement('a', { href: link.url }, link.description)), _react2.default.createElement('style', { jsx: true }, '\n          h2 {\n            display: inline-block;\n            font-size: 16px;\n            font-weight: 300;\n          }\n        '), ' ', _react2.default.createElement('a', { href: link.url }, '(', link.url.replace(/(^\w+:|^)\/\//, ''), ')'));
   }));
 };
 
