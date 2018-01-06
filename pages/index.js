@@ -3,7 +3,7 @@ import { gql } from 'react-apollo';
 import 'babel-polyfill';
 import apollo from '../lib/apollo';
 import Feed from '../components/Feed';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 global.fetch = require('node-fetch');
 
@@ -28,10 +28,9 @@ export default class App extends React.Component {
   render() {
     if (this.props.data && this.props.data.allLinks) {
       return (
-        <div>
-          <Header />
+        <Layout>
           <Feed links={this.props.data.allLinks} />
-        </div>
+        </Layout>
       );
     }
     return null;

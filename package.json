@@ -42,6 +42,7 @@
     "node-fetch": "^1.7.3",
     "react": "^16.2.0",
     "react-apollo": "^1.4.16",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "styled-jsx": "^2.2.1"
   }
 }
