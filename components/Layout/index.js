@@ -15,14 +15,11 @@ export default children => (
           width: 100%;
         }
         body {
-          align-items: center;
           background-color: #f2f3f5;
-          display: flex;
           height: 100%;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
           font-size: 16px;
           font-weight: 300;
-          justify-content: center;
           width: 100%;
         }
 

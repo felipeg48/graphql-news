@@ -1,6 +1,7 @@
 module.exports = {
   Query: {
     allLinks: async (root, data, { db: { Links } }) => await Links.find({}).toArray(), // eslint-disable-line no-return-await
+    allUsers: async (root, data, { db: { Users } }) => await Users.find({}).toArray(), // eslint-disable-line no-return-await
   },
   Mutation: {
     createLink: async (root, data, { db: { Links } }) => {
@@ -10,9 +11,8 @@ module.exports = {
     createUser: async (root, data, { db: { Users } }) => {
       const newUser = {
         name: data.name,
-        username: data.username,
-        email: data.authProvier.email.email,
-        password: data.authProvider.email.password,
+        email: data.auth.email.email,
+        password: data.auth.email.password,
       };
 
       const response = await Users.insert(newUser);

@@ -44,22 +44,23 @@ const Header = () => (
     </nav>
     <style jsx>{`
       header {
-        background-color: #e10098;
+        background-color: #ff6600;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 0.75em;
+        padding: 1em;
+        font-size: 14px;
       }
 
       h1.title {
+        font-size: 14px;
         flex-grow: 1;
-        font-size: 16px;
         margin: 0;
         padding: 0 0.75em 0 0;
       }
 
       nav {
-        flex-grow: 10;
+        flex-grow: 20;
       }
 
       ul {
@@ -91,10 +92,12 @@ const Header = () => (
         color: #ffffff;
         padding: 0 0.75em;
         opacity: 0.75;
+        transition: all 200ms ease;
       }
 
       a.link:hover {
         color: #ffffff;
+        opacity: 1;
       }
 
       a.login {
