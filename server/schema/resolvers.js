@@ -1,13 +1,13 @@
 module.exports = {
   Query: {
-    allLinks: async (root, data, { mongo: { Links } }) => await Links.find({}).toArray(), // eslint-disable-line no-return-await
+    allLinks: async (root, data, { db: { Links } }) => await Links.find({}).toArray(), // eslint-disable-line no-return-await
   },
   Mutation: {
-    createLink: async (root, data, { mongo: { Links } }) => {
+    createLink: async (root, data, { db: { Links } }) => {
       const response = await Links.insert(data); // 3
       return Object.assign({ id: response.insertedIds[0] }, data);
     },
-    createUser: async (root, data, { mongo: { Users } }) => {
+    createUser: async (root, data, { db: { Users } }) => {
       const newUser = {
         name: data.name,
         username: data.username,
@@ -18,7 +18,7 @@ module.exports = {
       const response = await Users.insert(newUser);
       return Object.assign({ id: response.insertedIds[0] }, newUser);
     },
-    signinUser: async (root, data, { mongo: { Users } }) => {
+    signinUser: async (root, data, { db: { Users } }) => {
       const user = await Users.findOne({ email: data.email.email });
       if (data.email.password === user.password) {
         return { token: `token-${user.email}`, user };
