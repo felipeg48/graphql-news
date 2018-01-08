@@ -1,29 +1,42 @@
 import React from 'react';
+import UpvoteArrow from '../Svg/arrow-up';
+import DownvoteArrow from '../Svg/arrow-down';
 
 const Feed = props => (
   <div className="feed-wrapper">
     {props.links.map((link, i) =>
-      <div key={`item-${i}`}>
-        <span className="position">
-          {i + 1}. {/* arrays start at 0 */}
-        </span>
-        <h2>
-          <a href={link.url} className="title">
-            {link.description}
-          </a>
-        </h2>{' '}
-        <a href={link.url} className="url">
-          {/* display source url & remove http/https from string */}
-          ({link.url.replace(/(^\w+:|^)\/\//, '')})
-        </a>
-        <div className="meta-info">
-          <span>100 points by nosferatu 3 hours ago | hide | 106 comments</span>
+      <div key={`item-${i}`} className="feed-item">
+        <div className="score-wrapper">
+          <UpvoteArrow className="upvote" fill="#E10098" />
+          125
+          <DownvoteArrow className="upvote" fill="#DEDFE1" />
         </div>
-        {/* make sure each link has a divider below except for the last item in the array */}
-        {props.links.length !== i + 1 ? <hr className="divider" /> : null}
+        <div>
+          <h2>
+            <a href={link.url} className="title">
+              {link.description}
+            </a>
+          </h2>{' '}
+          <span className="url">
+            {/* display source url & remove http/https from string */}
+            ({link.url.replace(/(^\w+:|^)\/\//, '').split(/[/?#]/)[0]})
+          </span>
+          <div className="meta-info">
+            <span>100 points by nosferatu 3 hours ago | hide | 106 comments</span>
+          </div>
+          {/* make sure each link has a divider below except for the last item in the array */}
+          {/* {props.links.length !== i + 1 ? <hr className="divider" /> : null} */}
+        </div>
         <style jsx>{`
-          span.position {
-            font-size: 12px;
+          div.score-wrapper {
+            align-items: center;
+            display: flex;
+            color: #e10098;
+            flex-direction: column;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            padding: 0 1em 0 0;
           }
 
           h2 {
@@ -39,7 +52,7 @@ const Feed = props => (
             color: #000000;
           }
 
-          a.url {
+          span.url {
             color: #807f80;
             font-size: 12px;
           }
@@ -50,19 +63,26 @@ const Feed = props => (
 
           div.feed-wrapper {
             background-color: #ffffff;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin: 1em;
+            width: 800px;
+          }
+
+          div.feed-item {
+            align-items: center;
+            border-bottom: 1px solid #f8f8f8;
+            display: flex;
             padding: 1em;
+          }
+
+          div.feed-item:last-child {
+            border: none;
           }
 
           div.meta-info > span {
             color: #807f80;
             font-size: 10px;
-          }
-
-          hr.divider {
-            border: none;
-            background-color: #f2f3f5;
-            height: 1px;
-            outline: none;
           }
         `}</style>
       </div>

@@ -8,6 +8,10 @@ module.exports = {
       const response = await Links.insert(data); // 3
       return Object.assign({ id: response.insertedIds[0] }, data);
     },
+    destroyLink: async (root, data, { db: { Links } }) => {
+      const id = data.id;
+      return await Links.deleteOne({ id }); // eslint-disable-line no-return-await
+    },
     createUser: async (root, data, { db: { Users } }) => {
       const newUser = {
         name: data.name,

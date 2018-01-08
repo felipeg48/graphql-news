@@ -28,6 +28,9 @@ export default children => (
         }
 
         div.container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           width: 100%;
         }
       `}</style>
@@ -35,7 +38,6 @@ export default children => (
     <div className="container">
       <Header />
       {children.children}
-      {/*<footer>{'Footer'}</footer>*/}
     </div>
   </div>
 );

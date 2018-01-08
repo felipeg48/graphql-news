@@ -2,106 +2,100 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <h1 className="title">GraphQL News</h1>
     <nav>
-      <ul>
+      <ul className="left-nav">
         <li>
           <a href="#" className="link active">
-            New
+            Top
           </a>
         </li>
         <li>
           <a href="#" className="link">
-            Comments
+            Recent
           </a>
         </li>
         <li>
           <a href="#" className="link">
-            Show
+            Favorites
           </a>
         </li>
+      </ul>
+      <ul className="right-nav">
         <li>
-          <a href="#" className="link">
-            Ask
-          </a>
-        </li>
-        <li>
-          <a href="#" className="link">
-            Jobs
-          </a>
-        </li>
-        <li>
-          <a href="#" className="link">
-            Submit
-          </a>
-        </li>
-        <li className="login">
           <a href="#" className="link login">
-            Login
+            Log in / Register
           </a>
+        </li>
+        <li>
+          <button className="submit-btn">Submit</button>
         </li>
       </ul>
     </nav>
     <style jsx>{`
       header {
-        background-color: #ff6600;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 1em;
+        justify-content: center;
+        background-color: #171e26;
         font-size: 14px;
-      }
-
-      h1.title {
-        font-size: 14px;
-        flex-grow: 1;
-        margin: 0;
-        padding: 0 0.75em 0 0;
+        width: 100%;
       }
 
       nav {
-        flex-grow: 20;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+        overflow: hidden;
+        margin: 1em;
+        width: 800px;
       }
 
       ul {
+        display: flex;
+        align-items: center;
+        flex: 1;
         list-style: none;
         margin: 0;
         overflow: auto;
         padding: 0;
       }
 
-      li {
-        float: left;
-        font-weight: 300;
+      ul.left-nav {
+        justify-content: flex-start;
+      }
+
+      ul.right-nav {
+        justify-content: flex-end;
       }
 
       ul > li:first-child > a {
         padding: 0 0.75em 0 0;
       }
 
-      li.login {
-        float: right !important;
-      }
-
       a.active {
-        font-weight: 500;
+        font-weight: 600;
         opacity: 1 !important;
       }
 
       a.link {
         color: #ffffff;
         padding: 0 0.75em;
-        opacity: 0.75;
+      }
+
+      button.submit-btn {
+        background-color: #2f353c;
+        border: none;
+        border-radius: 3px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 300;
+        padding: .75em 1em;
         transition: all 200ms ease;
       }
 
-      a.link:hover {
-        color: #ffffff;
-        opacity: 1;
-      }
-
-      a.login {
-        padding: 0 !important;
+      button.submit-btn:hover {
+        // background-color: #b34213;
       }
     `}</style>
   </header>

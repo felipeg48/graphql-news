@@ -3,23 +3,23 @@ const resolvers = require('./resolvers');
 
 const typeDefs = `
   type User {
-    id: ID!
+    id: ID
     name: String!
     email: String!
   }
 
   type Comment {
-    id: ID!
+    id: ID
     author: [User!]!
     body: String!
-    comments: [Comment!]!
+    comments: [Comment!]
   }
 
   type Link {
-    id: ID!
+    id: ID
     author: [User!]!
     score: Int!
-    comments: [Comment!]!
+    comments: [Comment!]
     url: String!
     description: String
   }
@@ -30,7 +30,8 @@ const typeDefs = `
   }
 
   type Mutation {
-    createLink(url: String!, description: String!): Link
+    createLink(author: String!, url: String!, description: String!): Link
+    destroyLink(id: String!): Link
     createUser(name: String!, auth: AuthSignupData!): User
     signinUser(email: PROVIDER_EMAIL): SigninPayload!
   } 
