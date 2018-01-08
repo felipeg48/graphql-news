@@ -4,9 +4,11 @@ module.exports = {
     allUsers: async (root, data, { db: { Users } }) => await Users.find({}).toArray(), // eslint-disable-line no-return-await
   },
   Mutation: {
-    createLink: async (root, data, { db: { Links } }) => {
-      const response = await Links.insert(data); // 3
-      return Object.assign({ id: response.insertedIds[0] }, data);
+    createLink: async (root, data, { db: { Links }, user }) => {
+      const link = Object.assign({ author: user && user._id }, data); // eslint-disable-line no-underscore-dangle
+      console.log(user);
+      const response = await Links.insert(link);
+      return Object.assign({ id: response.insertedIds[0] }, link);
     },
     destroyLink: async (root, data, { db: { Links } }) => {
       const id = data.id;
@@ -32,6 +34,9 @@ module.exports = {
   },
   Link: {
     id: root => root._id || root.id, // eslint-disable-line no-underscore-dangle
+    author: async ({ authorId }, data, { db: { Users } }) => {
+      return await Users.findOne({ _id: authorId }); // eslint-disable-line no-return-await
+    },
   },
   User: {
     id: root => root._id || root.id, // eslint-disable-line no-underscore-dangle

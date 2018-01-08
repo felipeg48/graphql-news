@@ -7,7 +7,7 @@ const Feed = props => (
     {props.links.map((link, i) =>
       <div key={`item-${i}`} className="feed-item">
         <div className="score-wrapper">
-          <UpvoteArrow className="upvote" fill="#E10098" />
+          <UpvoteArrow className="upvote" fill="#2D72D9" />
           125
           <DownvoteArrow className="upvote" fill="#DEDFE1" />
         </div>
@@ -31,7 +31,7 @@ const Feed = props => (
           div.score-wrapper {
             align-items: center;
             display: flex;
-            color: #e10098;
+            color: #2D72D9;
             flex-direction: column;
             font-size: 14px;
             font-weight: 600;

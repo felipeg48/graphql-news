@@ -1,6 +1,22 @@
 const { makeExecutableSchema } = require('graphql-tools');
 const resolvers = require('./resolvers');
 
+// mutation {
+//   signinUser(
+//     email: {
+//       email: "example@example.com",
+//       password: "test123"
+//     }
+//   ) {
+//     user {
+//       id
+//       name
+//       email
+//     }
+//     token
+//   }
+// }
+
 const typeDefs = `
   type User {
     id: ID
@@ -10,14 +26,14 @@ const typeDefs = `
 
   type Comment {
     id: ID
-    author: [User!]!
+    author: [User]
     body: String!
     comments: [Comment!]
   }
 
   type Link {
     id: ID
-    author: [User!]!
+    author: [User!]
     score: Int!
     comments: [Comment!]
     url: String!
@@ -30,7 +46,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    createLink(author: String!, url: String!, description: String!): Link
+    createLink(url: String!, description: String!): Link
     destroyLink(id: String!): Link
     createUser(name: String!, auth: AuthSignupData!): User
     signinUser(email: PROVIDER_EMAIL): SigninPayload!

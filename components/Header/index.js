@@ -91,11 +91,10 @@ const Header = () => (
         font-size: 14px;
         font-weight: 300;
         padding: .75em 1em;
-        transition: all 200ms ease;
       }
 
       button.submit-btn:hover {
-        // background-color: #b34213;
+        background-color: #2d72d9;
       }
     `}</style>
   </header>

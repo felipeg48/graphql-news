@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const { MongoClient } = require('mongodb');
 const schema = require('./schema');
+const auth = require('./lib/auth');
 
 const start = async () => {
   const app = express();
@@ -16,9 +17,22 @@ const start = async () => {
         Links: res.collection('links'),
         Users: res.collection('users'),
       };
+      const buildOptions = async (req, res) => { // eslint-disable-line
+        const user = auth(req, db.Users);
+        return {
+          context: { db, user },
+          schema,
+        };
+      };
 
-      app.use('/graphql', bodyParser.json(), graphqlExpress({ context: { db }, schema }));
-      app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+      app.use('/graphql', bodyParser.json(), graphqlExpress(buildOptions));
+      app.use(
+        '/graphiql',
+        graphiqlExpress({
+          endpointURL: '/graphql',
+          passHeader: `'Authorization': 'bearer token-example@example.com'`,
+        })
+      );
 
       const PORT = 8080;
       app.listen(PORT, () => {
